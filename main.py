@@ -18,10 +18,6 @@ from flask_sessionstore import Session
 from clusterfy_functions import get_track_info, clusterfy_function
 
 
-############################ VERY LAST BITS REMAINING 
-##ADD A "WHATS THIS PAGE" AND YOU ARE DONE BROO
-
-
 app = Flask(__name__)
 
 SESSION_TYPE = 'redis'
