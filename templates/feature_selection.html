@@ -1,0 +1,101 @@
+<doctype html>
+<html>
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+
+      <body class = body_intro>
+
+
+  <div class = "intro_description"> 
+
+	 <a class = "intro_title" href="/">CLUSTERFY <img src="/static/logo.png"/></a>
+    
+</div>
+
+<div>
+ <button onclick= "myFunction()" id="open_manual_button" class="manual_button">?</button>
+</div>
+
+<div>
+
+<div class = "banner">
+
+    <img class = "banner_image" src="/static/bg4.jpg"/>
+
+</div>
+
+<div class = "manual1" id = "manual_id1">
+
+  <h1 class = "step_1_title">Select The Sound Features for Your New Playlist</h1>
+  <p class = "step_1_text1"> CLUSTERFY will select songs with your selected audio features, so that your new playlist has a consistent sound to it <br /> <br />
+  Currently Spotify provides 9 sound features:<br /><br />
+  acousticness - how acoustic a track is<br />
+			energy - highly energetic songs feel fast and noisy<br />
+			danceability - defines how suitable a track is for dancing<br />
+			instrumentalness - tracks high in instrumentalness will contain less vocals<br />
+			liveness - detects presence of a live audience in the recording<br />
+			loudness - essentially how loud a track is<br />
+			speechiness - detects presence of spoken words in a track<br />
+			tempo - tempo of a track in beats per minute<br />
+			valence - how musically positive or negative a track is <br /> <br /> 
+
+	Select some features that you want to be maximised or minimised in your new playlist <br /> <br />
+	 </p>
+
+</div>
+
+<h2 class = "high_feats_title">Features to Maximise </h2>
+<h2 class = "low_feats_title">Features to Minimise</h2>
+
+<form id="form1" method="POST" action="/callback/playlist_showcase">
+<div class="check_box_step_2_high_feats">
+	{% for keys, values, img in high_features_dict%}
+<div class="checkbox_containers">
+	<input type="checkbox" value="{{values}}" name="high_features_checkbox" id="{{keys}}" /> 
+	<label class="step_1_checkbox_text_1"for="{{keys}}"><img class = "f_images" src="{{ img }}"/><span class="f_names">{{ keys }}</span></label>  <br /> 
+</div>
+	{% endfor %}
+</div>
+
+
+<div class="check_box_step_2_low_feats">
+
+	{% for keys_1, values_1, img in low_features_dict%}
+<div class="checkbox_containers1">
+	<input class="check_low" type="checkbox" value="{{values_1}}" name="low_features_checkbox" id="{{keys_1}}_2" /> 
+	<label class="step_1_checkbox_text_2"for="{{keys_1}}_2"><img class = "f_images" src="{{ img }}"/><span class="f_names">{{ keys_1 }}</span></label>  <br /> 
+</div>
+	{% endfor %}
+</div>
+
+<body>
+		<div id = "lay" class="layover" style="display:none;">
+	</div>
+<div class = "loading_icon" id="loading2" style="display:none;"><img class="loader" src="/static/load1.svg" alt="" />Generating Your Playlists!</div>
+<input id="submit" class="step_1_checkbox_button3" type="submit" value="Generate Playlist">
+</form>
+
+<script type="text/javascript">
+(function (d) {
+  d.getElementById('form1').onsubmit = function () {
+    d.getElementById('submit').style.display = 'none'
+    d.getElementById('loading2').style.display = 'block';
+    d.getElementById('lay').style.display = 'block';
+  };
+}(document));
+</script>
+
+
+
+</body>
+
+<script>
+function myFunction() {
+   var element = document.getElementById("manual_id1");
+   element.classList.toggle("manual-view");
+}
+</script>
+<body />

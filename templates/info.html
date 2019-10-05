@@ -1,0 +1,53 @@
+<doctype html>
+<html>
+
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+<body class = body_intro>
+
+<div class = "intro_description"> 
+
+	 <a class = "intro_title" href="/">CLUSTERFY <img src="/static/logo.png"/></a>
+	
+</div>
+
+<div>
+
+<div class = "banner">
+
+	<img class = "banner_image" src="/static/bg4.jpg"/>
+
+</div>
+
+
+
+</div>
+
+<div class = "info_box">
+
+<span style="font-size: 21px">
+
+	<p style="padding-left:21px">CLUSTERFY uses OAuth to manage user data. OAuth is used by Spotify to grant applications a secure access to user information.  <br/> <br/> </p>
+
+	<p style="padding-left:30px">CLUSERFY will only be granted: <br/>
+			<li style="padding-left: 1.5em">Your playlist information  <br/>  </li>
+			<li style="padding-left: 1.5em">Your most listened to artists <br/> </li>
+			<li style="padding-left: 1.5em">Ability to add a playlist to your library <br/> <br/></li>
+		</p>
+
+	<p style="padding-left:21px">CLUSTERFY will not delete any data, including playlsits.
+	</p>
+
+</span>
+
+</div>
+
+	<a class = "intro_start_button3" href="/auth"> <span class="login_text">Sign in with Spotify</span><img class = p_images src = "/static/spotify_icon.png"/></a>
+
+
+</body>
+
+</html>

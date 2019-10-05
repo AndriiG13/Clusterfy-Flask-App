@@ -1,0 +1,90 @@
+<doctype html>
+<html>
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+
+
+
+   <body class = body_intro>
+  <div class = "intro_description"> 
+
+   <a class = "intro_title" href="/">CLUSTERFY <img src="/static/logo.png"/></a>
+    
+</div>
+
+<div>
+
+<div class = "banner">
+
+    <img class = "banner_image" src="/static/bg4.jpg"/>
+
+</div>
+
+<div>
+<button onclick= "myFunction()" id="open_manual_button" class="manual_button">?</button>
+</div>
+
+<div class = "manual" id="manual_id" >
+
+  <h1 class = "step_1_title">Select The Playlists You Want To Use Songs From</h1>
+  <p class = "step_1_text"> Pick some of your current playlists <br /> <br />
+  Songs from the selected playlists will be used for the new playlist.  <br /> <br />
+  For best results choose playlists so that there at least 40 songs in total  </p>
+
+</div>
+
+<h2 class = "high_feats_title">Select Your Playlists </h2>	
+<div class="check_box_step_1">
+<form id="form1" class="step_1_form" method="POST" action="/callback/q1">
+	
+	{% for keys, values, img in sorted_array%}
+<div class="checkbox_containers0">
+	<input type="checkbox" value="{{values}}" name="checkbox_my" id="{{keys}}_3" /> 
+	<label class="step_1_checkbox_text"for="{{keys}}_3"><img class = "p_images" src="{{ img }}"/><span class="p_names">{{ keys }}</span></label>  <br /> 
+</div>
+	{% endfor %}
+	
+</div>
+<body>
+	<div id = "lay" class="layover" style="display:none;">
+	</div>
+<div class = "loading_icon" id="loading2" style="display:none;"><img class="loader" src="/static/load1.svg" alt="" />Selecting Your Songs!</div>
+	<input id="submit" class="step_0_checkbox_button" type="submit" value="Select">
+</form>
+<script type="text/javascript">
+(function (d) {
+  d.getElementById('form1').onsubmit = function () {
+    d.getElementById('submit').style.display = 'none'
+    d.getElementById('loading2').style.display = 'block';
+    d.getElementById('lay').style.display = 'block';
+  };
+}
+(document));
+</script>
+
+
+<script>
+function myFunction() {
+   var element = document.getElementById("manual_id");
+   element.classList.toggle("manual-view");
+}
+</script>
+</body>
+
+
+
+
+
+{% block body %}
+
+<div> {{ score }}  </div>  
+
+
+{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<doctype html>
+<html>
+
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+
+      <body class = body_intro>
+  <div class = "intro_description"> 
+
+	 <a class = "intro_title" href="/">CLUSTERFY <img src="/static/logo.png"/></a>
+    
+</div>
+
+<div>
+
+<div class = "banner">
+
+    <img class = "banner_image" src="/static/bg4.jpg"/>
+
+</div>
+
+  <h1 class = "step_1_title_p">Here Are The Top 3 Matching Playlists</h1>
+
+
+<div class= "playlist_container_1">
+	<p class = "playlist_title">Playlist 2</p>
+	<div class="playlist_showcase_list">
+	{% for imgs, names, artists, uris in second_best_tracks%}
+	<li>
+		<div class = "playlist_showcase_images" style="float:left;width:70;height:70;"><img class ="image2" src="{{ imgs }}"/></div>
+   		<div class = "playlist_showcase_text" style="float:right;width:200px;" >{{ names }} by {{ artists }}</div>
+   		<div style="clear:both;"></div>
+ 	</li>
+
+	{% endfor %}
+</div>
+<form class="playlist_form" method="post" action="/callback/playlist_upload_page">
+	<input class = "upload_playlist_button" type="submit" name = "upload_playlist_1_button" value = "Upload Playlist">
+</form>
+</div>
+
+
+<div class= "playlist_container_2">
+	<p class = "playlist_title">Playlist 1</p>
+	<div class="playlist_showcase_list">
+	{% for imgs, names, artists, uris in first_best_tracks%}
+	<li>
+		<div class = "playlist_showcase_images" style="float:left;width:70;height:70;"><img class ="image2" src="{{ imgs }}"/></div>
+   		<div class = "playlist_showcase_text" style="float:right;width:200px;" >{{ names }} by {{ artists }}</div>
+   		<div style="clear:both;"></div>
+ 	</li>
+
+	{% endfor %}
+
+</div>
+<form class="playlist_form" method="post" action="/callback/playlist_upload_page">
+	<input class = "upload_playlist_button" type="submit" name = "upload_playlist_2_button" value = "Upload Playlist">
+</form>
+</div>
+
+
+
+
+<div class= "playlist_container_3">
+	<p class = "playlist_title">Playlist 3</p>
+	<div class="playlist_showcase_list">
+	{% for imgs, names, artists, uris in third_best_tracks%}
+	<li>
+		<div class = "playlist_showcase_images" style="float:left;width:70;height:70;"><img class ="image2" src="{{ imgs }}"/></div>
+   		<div class = "playlist_showcase_text" style="float:right;width:200px;" >{{ names }} by {{ artists }}</div>
+   		<div style="clear:both;"></div>
+ 	</li>
+
+	{% endfor %}
+</div>
+<form class="playlist_form" method="post" action="/callback/playlist_upload_page">
+	<input class = "upload_playlist_button" type="submit" name = "upload_playlist_3_button" value = "Upload Playlist">
+</form>
+</div>
+
+
+
+<div
+	<body>
+    <a class = "start_again_button" href="/">Start Again</a>
+</body>
+</div>
+<body />
+
+
+	
+
+</html>

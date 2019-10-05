@@ -1,0 +1,71 @@
+<doctype html>
+<html>
+
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+
+ 
+
+<div class = "intro_description"> 
+
+	 <p class = "intro_title">Welcome to CLUSTERFY</p>
+	<p> CLUSTERFY is an app made to help you discover new artists and produce personalised playlists. 
+
+
+	<p class = subtitle> Reshuffle playlists </p>
+	<p>
+		Have you ever felt like you wanted a playlist for a specific mood or an occasion, but you couldn't be bothered to organise all of your countless songs into a new playlist? <br />CLUSTERFY gives you an easy way of making playlists that correspond to your needs.	
+	</p>
+	<p>
+		To make personalised playlists CLUSTERFY makes use of song sound features provided by Spotify. 
+
+		Right now spotify provides 9 audio features:
+			
+			<li>acousticness - how acoustic a track is</li>
+			<li>energy - highly energetic songs feel fast and noisy</li>
+			<li>danceability - defines how suitable a track is for dancing</li>
+			<li>instrumentalness - tracks high in instrumentalness will contain less vocals</li>
+			<li>liveness - detects presence of a live audience in the recording</li>
+			<li>loudness - essentially how loud a track is</li>
+			<li>speechiness - detects presence of spoken words in a track</li>
+			<li>tempo - tempo of a track in beats per minute</li>
+			<li>valence - how musically positive or negative a track is</li> 
+
+	<p>
+		CLUSTEFY lets you select songs from you already made playlists and then reshuffles them into a new playlists according to your configuration of the sound features. 
+
+		<br />For example if you want a playlist for a party you would select playlists that you know have some party songs in them. You would then select energy, danceability and <br />tempo as the sound features and CLUSTERFY will produce the perfect playlist for a the party. 
+
+		</p>
+
+	<p class = subtitle> Discover New Artists </p>
+
+		CLUSTEFY also helpts you discover new songs based on the artists you listen to. You can select some of your top artists and CLUSTERFY will search for related, low <br />popularity songs and put them into a playlist for our. It is also possible to customise the playlist sound features with this.
+
+	</p>
+	<p> 
+
+
+		The app uses SPOTIFY API making the authorization process secure.
+
+		<a class = "intro_start_button" href="/auth">Start</a>
+	</p>
+
+
+
+
+
+</div>
+
+<div>
+	<body>
+    
+</body>
+</div>
+
+
+	
+
+</html>
