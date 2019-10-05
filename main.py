@@ -36,8 +36,8 @@ secret_user = randomword(100)
 app.config['SECRET_KEY'] = secret_user
 
 ####################################################################################################
-client_id = "d5ec308d7b9749b5b49c3e4da6ef4da2"
-client_secret = "0e137083f0b149e8afa2eaa57f59fb94"
+client_id = "XXXXXXXXXXXXX"
+client_secret = "XXXXXXXXXXXXXXXX"
 
 spotify_authentification_url = "https://accounts.spotify.com/authorize"
 spotify_token_url = "https://accounts.spotify.com/api/token"
