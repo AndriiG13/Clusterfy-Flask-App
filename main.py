@@ -251,8 +251,6 @@ def discover_playlist():
     low_pop_artists_song_names = np.array([])
     for i in range(len(low_popularity_artist_ids)):
         current_artist_top_songs = sp.artist_top_tracks(low_popularity_artist_ids[i])
-        #print("CURRENT TRACK NAME")
-        #print(current_artist_top_songs)
         for n in range(len(current_artist_top_songs["tracks"])):
             low_pop_artists_top_songs_ids = current_artist_top_songs["tracks"][n]["name"]
             low_pop_artists_song_names = np.append(low_pop_artists_song_names, low_pop_artists_top_songs_ids)
@@ -639,11 +637,6 @@ def callback_p():
     except IndexError:
         playlist_images =  ["/static/playlist.png"] * len(playlist_ids)
     
-
-    print("NUMBER OF PLAYLISTS")
-    print(number_of_playlists)
-
-
 
 ####################################################################################
 
