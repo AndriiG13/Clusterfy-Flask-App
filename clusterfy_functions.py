@@ -26,8 +26,6 @@ def get_track_info(track_ids, access_token):
         if len(ids_chunked[-1]) % 2 != 0:
             del ids_chunked[-1]
 
-        print("LENGTH CUNKED")
-        print(len(ids_chunked))    
 
         for i in range(len(ids_chunked)):
 
