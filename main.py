@@ -597,7 +597,6 @@ def callback_p():
             playlist_data_2 = json.loads(playlists_response.text)
             
             for n in range(10):
-                print(n)
                 current_p_name =  playlist_data_2["items"][n]["name"]
                 playlist_names.append(current_p_name)
 
@@ -792,8 +791,7 @@ def callback_feat_sel_4():
     current_playlist_id_list = selected_playlists_ids
     all_needed_track_ids = []
     all_needed_track_names = []
-    print("ID LIST")
-    print(current_playlist_id_list)
+   
     for i in range(len(current_playlist_id_list)):
         current_playlist_id = current_playlist_id_list[i]
 
@@ -833,19 +831,11 @@ def callback_feat_sel_4():
             selected_playlists_song_ids.append(current_song_id)
 
         all_needed_track_ids.append(selected_playlists_song_ids)
-
-
-
-
-        print("all_needed_track_names")
-        print(all_needed_track_names)
-
     
 
     ##get users saved tracks info if triggered 
     saved_tracks_triggered = session.get("saved_tracks_triggered")
     if saved_tracks_triggered == 1:
-        print("SAVED TRACKS TRIGGERED")
 
         playlist_api_endpoint = "{}/me/tracks?limit=10&offset=0".format(spotify_api_url)
         playlists_response = requests.get(playlist_api_endpoint, headers=authorization_header)
@@ -930,11 +920,10 @@ def callback_feat_sel_4():
 ####################################################################################
     track_features_list = []
 
-    print("ALL NEEDED TRACK IDS")
     for d in range(len(all_needed_track_ids)):
         for i in range(len(all_needed_track_ids[d])):
             current_track_id = all_needed_track_ids[d][i]
-            print(current_track_id)
+          
             playlist_api_endpoint = "{}/audio-features/{}".format(spotify_api_url, current_track_id)
             playlists_response = requests.get(playlist_api_endpoint, headers=authorization_header)
             track_features = json.loads(playlists_response.text)
@@ -962,8 +951,7 @@ def callback_feat_sel_4():
     ##make a the DF with track info including audio features.
     track_features_DF = pd.DataFrame(track_features_list)
 
-    #print(track_features_DF)
-    #print(all_needed_track_names_flat)
+
     track_features_DF['track_names'] = all_needed_track_names_flat
     track_features_DF_filtered_for_clustering = track_features_DF[total_features_flat]
 
